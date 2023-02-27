@@ -1,0 +1,27 @@
+const {Builder, By, Key, WebDriver, document} = require ("selenium-webdriver"); 
+
+async function firstTest(){
+
+    let driver = await new Builder().forBrowser("firefox").build();
+
+    await driver.get("https://www.w3schools.com/");
+
+    await driver.findElement(By.id("signupbtn_topnav")).click();
+
+    await driver.findElement(By.id("signUpFromSignup")).click();
+
+    await driver.findElement(By.id("modalusername")).sendKeys("softwareqa02@gmail.com");
+
+    await driver.findElement(By.id("new-password")).sendKeys("AQdtBH123!");
+
+    await driver.findElement(By.xpath("//div[@class='LoginModal_cta_bottom_box_button_login__5Fbwv']")).click();
+
+    await driver.findElement(By.id("modal_first_name")).sendKeys("Software");
+
+    await driver.findElement(By.id("modal_last_name")).sendKeys("QA");
+
+    await driver.findElement(By.xpath("//div[@class='LoginModal_cta_bottom_box_button_login__5Fbwv']")).click();
+
+}
+
+firstTest();
